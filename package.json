@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "test:accessibility": "concurrently \"npm start\" \"sleep 20 && npm run pa11y || npm run pa11y:report\"",
+    "test:accessibility": "concurrently \"npm start\" \"sleep 10 && npm run pa11y || npm run pa11y:report\"",
     "pa11y": "pa11y-ci --config .pa11y-ci.json",
     "pa11y:report": "open reports/index.html"
   },
