@@ -37,8 +37,7 @@
         "wait for path to be /recipes",
         "click element #manage",
         "click element #fetchRecipes",
-        "wait for element .img-thumbnail to be visible",
-        "screen capture example.png"
+        "wait for element .img-thumbnail to be visible"
       ]
     },
     {
