@@ -103,7 +103,7 @@ jobs:
           echo "ADA tests passed and no issues found"
           exit 0
   build:
-    needs: unit-tests, lint, accessibility
+    needs: [unit-tests, lint, accessibility]
     runs-on: ubuntu-latest
     steps:
       - name: Get code
