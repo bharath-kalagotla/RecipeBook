@@ -1,0 +1,68 @@
+{
+  "defaults": {
+    "standard": "WCAG2AA",
+    "timeout": 50000,
+    "runners": [
+      "axe"
+    ],
+    "chromeLaunchConfig": {
+      "args": [
+        "--no-sandbox"
+      ]
+    },
+    "reporters": [
+      "cli",
+      [
+        "pa11y-ci-reporter-html",
+        {
+          "destination": "./reports"
+        }
+      ]
+    ]
+  },
+  "urls": [
+    {
+      "url": "http://localhost:4200/shopping-list"
+    },
+    {
+      "url": "http://localhost:4200/auth"
+    },
+    {
+      "url": "http://localhost:4200/recipes",
+      "actions": [
+        "navigate to http://localhost:4200/auth",
+        "set field #email to kbk16490@gmail.com",
+        "set field #password to test@123",
+        "click element #login",
+        "wait for path to be /recipes",
+        "click element #manage",
+        "click element #fetchRecipes",
+        "wait for element .img-thumbnail to be visible",
+        "screen capture example.png"
+      ]
+    },
+    {
+      "url": "http://localhost:4200/recipes/new",
+      "actions": [
+        "navigate to http://localhost:4200/auth",
+        "set field #email to kbk16490@gmail.com",
+        "set field #password to test@123",
+        "click element #login",
+        "wait for path to be /recipes",
+        "navigate to http://localhost:4200/recipes/new"
+      ]
+    },
+    {
+      "url": "http://localhost:4200/recipes/*",
+      "actions": [
+        "navigate to http://localhost:4200/auth",
+        "set field #email to kbk16490@gmail.com",
+        "set field #password to test@123",
+        "click element #login",
+        "wait for path to be /recipes",
+        "navigate to http://localhost:4200/recipes/0",
+        "wait for element .recipe-detail-section to be visible"
+      ]
+    }
+  ]
+}
